@@ -1,5 +1,9 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:news_app/main.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,6 +17,35 @@ void main() {
 class _HomePageState extends State<HomePage> {
   static List<News> news = <News>[];
   static List<News> newsInApp = <News>[];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(90),
+        child: Column(children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.black,
+              border: Border(
+                  bottom: BorderSide(
+                width: 0.5,
+                color: Colors.black,
+              )),
+            ),
+            child: AppBar(
+              title: Text(
+                'STAR-LIGHT NEWS',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 25,
+                ),
+              ),
+            ),
+          )
+        ]),
+      ),
+    );
+  }
 
   Future<List<News>> comingNews() async {
     var url = 'https://newsapi.org/';
