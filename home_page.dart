@@ -55,8 +55,7 @@ class _HomePageState extends State<HomePage> {
     if (response.statusCode == 200) {
       var notesJson = json.decode(response.body);
       for (var noteJson in notesJson) {
-        news.add(News.fromJson(noteJson, newsjson.id, newsjson.url, title,
-            author, publisher, image, date, text));
+        news.add(News.fromJson(noteJson);
       }
     }
     return news;
