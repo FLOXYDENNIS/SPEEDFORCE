@@ -24,15 +24,17 @@ class News {
     this.date,
   );
 
-  News.fromJson(Map<String, dynamic> json, this.id, this.url, this.author,
-      this.date, this.image, this.publisher, this.text, this.title) {
-    id = json['id'];
-    url = json['url'];
-    title = json['title'];
-    publisher = json['publisher'];
-    author = json['author'];
-    image = json['image'];
-    date = json['date'];
+  News.fromJson(Map<String, dynamic> json) {
+    return  News(
+    id: json['id'];
+    url: json['url'];
+    title: json['title'];
+    publisher: json['publisher'];
+    author: json['author'];
+    image: json['image'];
+    date: json['date'];
+  );
+    
   }
 }
 
